@@ -1,0 +1,19 @@
+<DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Mon super titre</title>
+<meta name="description" content="La description visible sur les moteurs de recherche">
+</head>
+<body>
+
+<form method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type="submit" value="S'inscrire">
+</form>
+
+</body>
+</html>

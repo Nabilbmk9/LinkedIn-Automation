@@ -1,0 +1,60 @@
+{% load static %}
+<DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+        <title>Namo Prospection</title>
+    {% endblock %}
+    <meta name="description" content="La description visible sur les moteurs de recherche">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav>
+        <h1>Namo Prospection</h1>
+        <div class="onglets">
+            <a href="">Accueil</a>
+            <a href="#info">Prospecter</a>
+
+            {% if not request.user.is_authenticated %}
+                <a href="signup/">S'inscrire</a>
+                <a href="compte/login/">Se connecter</a>
+            {% elif request.user.is_authenticated %}
+                <a href="mon_compte/">Mon compte</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <header>
+        <h1>Namo Prospection</h1>
+        <h4>Générez des prospects pendant que vous dormez</h4>
+        <button>Parcourir</button>
+    </header>
+
+    <section class="main" id="info">
+        <div class="content">
+
+            <div class="card">
+                <div class="left">
+                    <h1>Prospections sans limite</h1>
+                    <p>Notre services vous propose d'envoyer des messages à des prospect linkedin. Programmez le puis laissez le faire</p>
+                </div>
+                <div class="right">
+                    <img src="static/css/images/image1.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="left">
+                    <h1>Augmentez vos résultats</h1>
+                    <p>Laissez nous prospecter a votre place. Plus de prospect, plus de résultat, plus de temps libre</p>
+                </div>
+                <div class="right">
+                    <img src="static/css/images/image2.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

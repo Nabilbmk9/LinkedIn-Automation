@@ -1,0 +1,4 @@
+credentials.json
+.env/
+.env
+*.zip
